@@ -11,10 +11,3 @@
   command = "yarn build:preview"
 
 #https://docs.netlify.com/routing/redirects/#syntax-for-the-netlify-configuration-file
-
-  [[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200
-    force = true
-    headers = {X-From = "Netlify"}
