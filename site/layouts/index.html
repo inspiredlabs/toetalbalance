@@ -215,6 +215,7 @@ svg:not(:root) {vertical-align: middle;}
 			  prevNextButtons: false,
 			  dragThreshold:72,//66
 			  wrapAround: true,
+				isInstant: true,			  
 			  pageDots: false,			  
 			  hash: true,
   		  on: {
@@ -336,7 +337,7 @@ while (uri !== listItem && uri.length > 0) {
   		  
   		});
 			
-			
+// NEW:			
 //			var utils = window.fizzyUIUtils;
 //			var cellsButtonGroup = document.querySelector('.button-group--cells');
 //			var cellsButtons = utils.makeArray( cellsButtonGroup.children );
@@ -359,7 +360,7 @@ while (uri !== listItem && uri.length > 0) {
 //			  flkty.select( index );
 //			});
 			
-			
+			// PREVIOUS:
 			var buttonGroup = document.querySelector('.button-group--cells');
 			var buttons = buttonGroup.querySelectorAll('.button');
 			buttons = fizzyUIUtils.makeArray(buttons);
@@ -374,6 +375,7 @@ while (uri !== listItem && uri.length > 0) {
 			        return;
 			    }
 			    var index = buttons.indexOf(event.target);
+			    // isInstant: true,
 			    flkty.select(index, false, true);
 			});
 			
