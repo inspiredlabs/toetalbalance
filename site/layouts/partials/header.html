@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+
+<!-- Enable responsiveness on mobile devices-->
+<title> {{ .Title }} &middot; {{ .Site.Title }} </title>
+
+<!--Styles'n'Scripts -->
+<link rel="stylesheet" href="js/flickity.min.css">
+<style>
+/* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+body {
+font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+padding: 0;
+margin: 0;
+}
+
+.carousel {
+	/*background: #FAFAFA;*/
+}
+
+.carousel-cell {
+/*width: 66%;
+height: 200px;
+margin-right: 10px;
+border-radius: 5px;
+*/
+
+width: 100%;
+width: 100vw;
+height: 100%;
+height: 100vh;
+background: #8C8;
+/*counter-increment: carousel-cell;*/
+}
+
+/* cell number 
+.carousel-cell:before {
+display: block;
+text-align: center;
+content: counter(carousel-cell);
+line-height: 200px;
+font-size: 80px;
+color: white;
+}*/
+
+.flickity-page-dots {
+	bottom: 0;
+	z-index: 999;
+}
+
+</style>
+</head>

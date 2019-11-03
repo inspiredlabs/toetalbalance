@@ -1,6 +1,32 @@
-{{ define "main" }}
-
-{{ partial "jumbotron" (dict "imageUrl" "/img/7.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
-{{ .Content }}
-
-{{ end }}
+<div class="carousel-cell" id="{{ .Params.name | lower | urlize }}">
+	<div class="h-100 overflow-y-scroll touch-scrolling">
+		<article class="w-100 w-80-ns mt5 mb6 highlight">
+		
+			{{/*<!--header class="post-header">
+			<a id="blog-logo" href="{{ .Site.BaseURL}}">
+			  {{ if .Site.Params.logo }}
+			    <a id="blog-logo" href="{{ .Site.BaseURL}}"><img src="{{ .Site.Params.logo }}" alt="Blog Logo" /></a>
+			  {{else}}
+			    {{ .Site.Title }}
+			  {{ end }}
+			</a>
+			</header-->*/}}
+			<!--h1 class="post-title">{{ .Title }}</h1-->
+			
+			<section class="measure mr-auto ml-auto baskerville f3 lh-copy">
+				{{ .Content }}
+			</section>
+			
+			<!--footer class="post-footer">
+			
+			{{ if .Site.Author }}
+			<section class="author">
+			  <h4>{{ .Site.Author.name}}</h4>
+			  <p>{{ .Site.Author.bio }}</p>
+			</section>
+			{{ end }}
+			
+			</footer-->
+		</article>
+	</div>
+</div>
