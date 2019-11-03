@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-
+<!--<meta name="viewport" content="width=device-width, user-scalable=no">-->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" >
 <!--link rel="shortcut icon" type="image/x-icon" href=favicon.png sizes=32x32 />
 <link rel=icon type="image/x-icon" href=favicon.png sizes=32x32 />
 <link rel=apple-touch-icon-precomposed href=favicon.png />
@@ -138,13 +138,13 @@ svg:not(:root) {vertical-align: middle;}
 
 	
 	<!-- https://gohugo.io/templates/pagination/ -->	
-	<nav class="button-row pa0 bn ma0 h3 h4-m w-100 bottom-0 z-999 no-clutter antialias bg-deep-healing disable-scrolling absolute fixed">
+	<nav class="button-row pa0 bn ma0 h3 h2-ns h3-m h2-l w-100 bottom-0 z-999 no-clutter antialias bg-deep-healing disable-scrolling absolute fixed">
 	  <div class="button-group button-group--cells ">
 	    {{ range .Pages.ByWeight }}
 	    {{ $current := .Params.Name | lower | urlize }}
-	    <button class="fl dib w-third h3 h4-m tc bn pointer glow overflow-x-hidden o-60 button bg-deep-healing ma-auto" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
-	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 h4-m h2-l ma-auto pa4 pa1-l">
-		    	<svg class="dib db-ns db-m dib-l ma-auto" width="32" height="32" viewBox="0 0 128 128" alt="{{ .Params.Name | lower | urlize }}"><!-- ml-auto mr-auto dib mt0 db-m mb2-m mt3-m dib-l mb0-l mt0-l -->
+	    <button class="fl dib w-third h3 h2-ns h3-m h2-l tc bn pointer glow overflow-x-hidden o-60 button bg-deep-healing ma-auto" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
+	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 pa2 pa2-ns pa2-m pa1-l h3 h2-ns h3-m h2-l ma-auto">
+		    	<svg class="db dib-l ma-auto" width="32" height="32" viewBox="0 0 128 128" alt="{{ .Params.Name | lower | urlize }}"><!-- ml-auto mr-auto dib mt0 db-m mb2-m mt3-m dib-l mb0-l mt0-l -->
 		    	  <use xlink:href="#{{ .Params.Name | lower | urlize }}"></use>
 		    	</svg>
 		    	<span>{{ .Params.Name }}</span><!-- class="debug relative underline link top-4" -->
@@ -214,8 +214,9 @@ svg:not(:root) {vertical-align: middle;}
 			var carousel = document.querySelector('.carousel');
 			var flkty = new Flickity( carousel, {
 			  prevNextButtons: false,
-			  pageDots: false,
+			  dragThreshold:66,
 			  wrapAround: true,
+			  pageDots: false,			  
 			  hash: true,
   		  on: {
   		    ready: function() {
