@@ -2,9 +2,18 @@ baseurl = "./" # local only
 # baseurl = "https://toetalbalance.netlify.com/" #{{ .Site.BaseURL }} "/" && netlify
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
 languageCode = "en-gb" #Initial configuration reset #languageCode = "en-us"
-title = "Homepage" #FAIRtech Revolution | Rvo.lt
+title = "Katy Phillips | Reflexology & Nail Care"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[Params]
+  github = "inspiredlabs"
+  twitter = "inspiredlabs"
+  email = "katyfeet@gmail.com"
+  SiteDescription = "Professional Reflexologist working in Cheshire. Helping the body heal naturally. Site by InspiredLabs.co.uk"
+  #linkedin = "theurbanaut"
+  #cover = "/img/background-cover.jpg"
+  #logo = "/img/logo-1.jpg"
