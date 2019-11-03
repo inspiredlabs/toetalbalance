@@ -108,7 +108,6 @@ svg:not(:root) {vertical-align: middle;}
 		  			
 		  			
 		  			<section class="measure mr-auto ml-auto baskerville f3 lh-copy ">
-		  				<h1>{{ .Title }}</h1>
 		  				{{ .Content }}
 		  				<span class="h7 disable-scrolling"></span>
 		  			</section>
@@ -138,12 +137,12 @@ svg:not(:root) {vertical-align: middle;}
 
 	
 	<!-- https://gohugo.io/templates/pagination/ -->	
-	<nav class="button-row pa0 bn ma0 h3 h2-ns h3-m h2-l w-100 bottom-0 z-999 no-clutter antialias bg-deep-healing disable-scrolling absolute fixed">
+	<nav class="button-row pa0 bn ma0 h3 h3-ns h3-m h2-l w-100 bottom-0 z-999 no-clutter antialias bg-deep-healing disable-scrolling absolute fixed">
 	  <div class="button-group button-group--cells ">
 	    {{ range .Pages.ByWeight }}
 	    {{ $current := .Params.Name | lower | urlize }}
-	    <button class="fl dib w-third h3 h2-ns h3-m h2-l tc bn pointer glow overflow-x-hidden o-60 button bg-deep-healing ma-auto" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
-	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 pa2 pa2-ns pa2-m pa1-l h3 h2-ns h3-m h2-l ma-auto">
+	    <button class="fl dib w-third h3 h3-ns h3-m h2-l tc bn pointer glow overflow-x-hidden o-60 button bg-deep-healing ma-auto" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
+	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 pa2 pa2-ns pa2-m pa1-l h3 h3-ns h3-m h2-l ma-auto">
 		    	<svg class="db dib-l ma-auto" width="32" height="32" viewBox="0 0 128 128" alt="{{ .Params.Name | lower | urlize }}"><!-- ml-auto mr-auto dib mt0 db-m mb2-m mt3-m dib-l mb0-l mt0-l -->
 		    	  <use xlink:href="#{{ .Params.Name | lower | urlize }}"></use>
 		    	</svg>
@@ -214,7 +213,7 @@ svg:not(:root) {vertical-align: middle;}
 			var carousel = document.querySelector('.carousel');
 			var flkty = new Flickity( carousel, {
 			  prevNextButtons: false,
-			  dragThreshold:66,
+			  dragThreshold:72,//66
 			  wrapAround: true,
 			  pageDots: false,			  
 			  hash: true,
