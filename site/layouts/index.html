@@ -337,27 +337,47 @@ while (uri !== listItem && uri.length > 0) {
   		});
 			
 			
-			var utils = window.fizzyUIUtils;
-			var cellsButtonGroup = document.querySelector('.button-group--cells');
-			var cellsButtons = utils.makeArray( cellsButtonGroup.children );
+//			var utils = window.fizzyUIUtils;
+//			var cellsButtonGroup = document.querySelector('.button-group--cells');
+//			var cellsButtons = utils.makeArray( cellsButtonGroup.children );
+//			
+//			// update buttons on select
+//			flkty.on( 'select', function() {
+//			  var previousSelectedButton = cellsButtonGroup.querySelector('.is-selected');
+//			  var selectedButton = cellsButtonGroup.children[ flkty.selectedIndex ];
+//			  previousSelectedButton.classList.remove('is-selected');
+//			  selectedButton.classList.add('is-selected');
+//			  carousel.focus();
+//			});
+//			
+//			// cell select
+//			cellsButtonGroup.addEventListener( 'click', function( event ) {
+//			  if ( !matchesSelector( event.target, '.button' ) ) {
+//			    return;
+//			  }
+//			  var index = cellsButtons.indexOf( event.target );
+//			  flkty.select( index );
+//			});
 			
-			// update buttons on select
-			flkty.on( 'select', function() {
-			  var previousSelectedButton = cellsButtonGroup.querySelector('.is-selected');
-			  var selectedButton = cellsButtonGroup.children[ flkty.selectedIndex ];
-			  previousSelectedButton.classList.remove('is-selected');
-			  selectedButton.classList.add('is-selected');
-			  carousel.focus();
+			
+			var buttonGroup = document.querySelector('.button-group--cells');
+			var buttons = buttonGroup.querySelectorAll('.button');
+			buttons = fizzyUIUtils.makeArray(buttons);
+			flkty.on('select', function() {
+			    var previousSelectedButton = buttonGroup.querySelector('.is-selected');
+			    var selectedButton = buttonGroup.children[flkty.selectedIndex];
+			    previousSelectedButton.classList.remove('is-selected');
+			    selectedButton.classList.add('is-selected');
+			});
+			buttonGroup.addEventListener('click', function(event) {
+			    if (!matchesSelector(event.target, '.button')) {
+			        return;
+			    }
+			    var index = buttons.indexOf(event.target);
+			    flkty.select(index, false, true);
 			});
 			
-			// cell select
-			cellsButtonGroup.addEventListener( 'click', function( event ) {
-			  if ( !matchesSelector( event.target, '.button' ) ) {
-			    return;
-			  }
-			  var index = cellsButtons.indexOf( event.target );
-			  flkty.select( index );
-			});
+			
 			
 		</script>
 		
