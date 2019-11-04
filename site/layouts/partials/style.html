@@ -10,6 +10,7 @@
 	/* 13.10.19	.b--transparent		border top highlight		moved cascade override	*/
 	/* 04.11.19	.ma-auto					mr-auto ml-auto					+ missing top & bottom	*/
 	/* 04.11.19 .backface-hidden	-webkit hide (flickity)	addition								*/
+	/* 04.11.19 .no-focus-ring 		<button> + button-reset	addition								*/
 	
 	/* .box-sizing,etc...{border-box;margin-top:0;margin-bottom:0;}. */
 	/* .dim and .grow: https://github.com/tachyons-css/tachyons/issues/337 */
@@ -8558,7 +8559,7 @@
 	/* Atomic utility class */
 	.no-clutter { -webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-text-size-adjust:none; /*-webkit-user-select:none;-ms-touch-action:none;*/ }
 	
-	.no-focus-ring:focus {outline:none;}
+	.no-focus-ring:focus {outline:none;} /* https://stackoverflow.com/questions/71074/how-to-remove-firefoxs-dotted-outline-on-buttons-as-well-as-links */
 	.no-focus-ring::-moz-focus-inner {border:0;}
 	
 	.antialias {
