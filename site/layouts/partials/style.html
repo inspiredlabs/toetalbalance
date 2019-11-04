@@ -8558,6 +8558,9 @@
 	/* Atomic utility class */
 	.no-clutter { -webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-o-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-text-size-adjust:none; /*-webkit-user-select:none;-ms-touch-action:none;*/ }
 	
+	.no-focus-ring:focus {outline:none;}
+	.no-focus-ring::-moz-focus-inner {border:0;}
+	
 	.antialias {
 		-webkit-font-smoothing: antialiased;
 		font-smoothing: antialiased; /* White text on black */

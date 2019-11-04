@@ -22,8 +22,6 @@
 <link rel="stylesheet" href="js/flickity.min.css">
 <style>
 /* external css: flickity.css */
-
-* { box-sizing: border-box; }
 html{-ms-touch-action:manipulation;touch-action:manipulation;}
 html, body{height:100%;width:100%;margin:0;padding:0;overflow:hidden;-webkit-backface-visibility:hidden;}
 .carousel-cell{/*width: 100%;*/width:100vw;/*height: 100%;*/height:calc(100% - 1px);/*overflow-y:scroll;-webkit-overflow-scrolling:touch;padding-top:4.4rem;*/}
@@ -34,8 +32,8 @@ html, body{height:100%;width:100%;margin:0;padding:0;overflow:hidden;-webkit-bac
 }
 
 .button.is-selected {
-    background: #57005d; /* Tyrian (Royal Purple) */
-    opacity: 1;
+  background: #57005d; /* Tyrian (Royal Purple) */
+  opacity: 1;
 }
 
 article {
@@ -55,12 +53,14 @@ article h3, article h4, article h5, article h6 {
 {{ partial "style.html" . }}
 </head>
 
-{{/* partial "header.html" . */}}
+
 <body class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter bg-magnolia system">
 	{{ partial "svg.html" . }}
+	
+	{{/* partial "header.html" . */}}
 	<header class="pa0 bn ma0 h3 w-100 top-0 z-9999 antialias bg-plum disable-scrolling absolute fixed">
 		<p class="white tc">{{ .Site.Title }}</p>
-		<p class="white tc">{{.Description | default .Site.Params.SiteDescription}}</p>		
+		<!--p class="white tc">{{/* .Description | default .Site.Params.SiteDescription */}}</p-->
 	</header>
 	
 	<!-- The big featured header on the homepage, with the site logo and description -->
@@ -132,8 +132,8 @@ article h3, article h4, article h5, article h6 {
 	  <div class="button-group button-group--cells ">
 	    {{ range .Pages.ByWeight }}
 	    {{ $current := .Params.Name | lower | urlize }}
-	    <button class="fl dib w-third h3 h3-ns h3-m h3-l tc bn pointer glow overflow-x-hidden o-60 button bg-plum ma-auto" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
-	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 pa2 pa2-ns pa2-m pa3-l h3 h3-ns h3-m h3-l ma-auto">
+	    <button class="fl dib w-third h3 h3-ns h3-m h3-l tc bn pointer glow overflow-x-hidden o-60 button bg-plum ma-auto " data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
+	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 pa2 pa2-ns pa2-m pa3-l h3 h3-ns h3-m h3-l ma-auto button-reset no-focus-ring">
 		    	<svg class="db dib-l ma-auto v-mid" width="32" height="32" viewBox="0 0 128 128" alt="{{ .Params.Name | lower | urlize }}"><!-- ml-auto mr-auto dib mt0 db-m mb2-m mt3-m dib-l mb0-l mt0-l -->
 		    	  <use xlink:href="#{{ .Params.Name | lower | urlize }}"></use>
 		    	</svg>
