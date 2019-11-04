@@ -8,6 +8,9 @@
 	/* 30.05.19	.f8 							0.6rem									addition 	*/
 	/* 14.08.19	.debug *					display colours					media query addition 		*/
 	/* 13.10.19	.b--transparent		border top highlight		moved cascade override	*/
+	/* 04.11.19	.ma-auto					mr-auto ml-auto					+ missing top & bottom	*/
+	/* 04.11.19	svg:not(:root) 		vertical middle					addition								*/
+	/* 04.11.19 .backface-hidden	-webkit hide (flickity)	addition								*/
 	
 	/* .box-sizing,etc...{border-box;margin-top:0;margin-bottom:0;}. */
 	/* .dim and .grow: https://github.com/tachyons-css/tachyons/issues/337 */
@@ -22,12 +25,11 @@
 	
 	/* https://github.com/tachyons-css/tachyons/issues/566 */
 	
-	/* Genarator: https://github.com/tachyons-css/tachyons/issues/459 */
 	
+	
+	/* Genarator: https://github.com/tachyons-css/tachyons/issues/459 */	
 	/*! TACHYONS v4.9.1 | http://tachyons.io */
-	
 	/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
-	
 	/* : .b--transparent { border-color: transparent; } */
 	
 	html {
@@ -2917,6 +2919,8 @@
 		padding-left: 16rem;
 		padding-right: 16rem;
 	}
+	
+	.ma-auto { margin: auto; }
 	
 	.ma0 {
 		margin: 0;
@@ -7991,8 +7995,21 @@
 	.bg-animate:hover{
 	    color:rgba(38, 38, 38, 1)
 	}
+
+
+
+
+
+
+
+
+
 	
  :root{
+
+		--plum:#7f3c84;
+		--tyrian:#57005d;
+		--magnolia:#f7f5f7;
     
     --oxford:#002147;
     --violet:#741472;
@@ -8084,6 +8101,46 @@
 
 	.hover-bg-charcoal:hover,
 	.hover-bg-charcoal:focus { background-color:var(--charcoal); }
+	
+
+	/*------------------- Toetal Magnolia ---------------------*/			
+	.magnolia { color: var(--magnolia); }
+	.bg-magnolia { background-color: var(--magnolia); }
+	.b--magnolia { border-color: var(--magnolia); }
+	
+	.hover-magnolia:hover,
+	.hover-magnolia:focus { color: var(--magnolia); }
+	
+	.hover-bg-magnolia:hover,
+	.hover-bg-magnolia:focus { background-color: var(--magnolia); }
+	
+	
+	
+	
+	/*------------------- Toetal Purple ---------------------*/		
+	.tyrian { color: var(--tyrian); }
+	.bg-tyrian { background-color: var(--tyrian); }
+	.b--tyrian { border-color: var(--tyrian); }
+	
+	.hover-tyrian:hover,
+	.hover-tyrian:focus { color: var(--tyrian); }
+	
+	.hover-bg-tyrian:hover,
+	.hover-bg-tyrian:focus { background-color: var(--tyrian); }
+	
+	
+	
+	
+	/*------------------- Toetal Plum ---------------------*/	
+	.plum { color: var(--plum); }
+	.bg-plum { background-color: var(--plum); }
+	.b--plum { border-color: var(--plum); }
+	
+	.hover-plum:hover,
+	.hover-plum:focus { color: var(--plum); }
+	
+	.hover-bg-plum:hover,
+	.hover-bg-plum:focus { background-color: var(--plum); }
 	
 	/*------------------- Beacon orange ---------------------*/
 	.beacon { color: #F15A22; } /* hazard, warning, prepare, signal, logo */
@@ -8415,6 +8472,11 @@
 	transition: all 0.4s ease 0s;
 	-webkit-transition: all 0.4s ease 0s;
 }
+
+.transition:hover {
+	transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+}
 </style>
 
 
@@ -8483,7 +8545,10 @@
 		
 	/* iOS zoom */
 	html, body { /*-webkit-text-size-adjust: 100%;*/ }
+	.backface-hidden { -webkit-backface-visibility:hidden; }
 	select, input, textarea { /*font-size: 16px;*/ }
+	
+/*	svg:not(:root) {vertical-align: middle;} /* Clean icons */
 	
 	svg { -webkit-transform: translate3d(0,0,0); }/* iOS subpixel jank */
 	

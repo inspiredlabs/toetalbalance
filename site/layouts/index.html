@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!--<meta name="viewport" content="width=device-width, user-scalable=no">-->
+<!-- https://testmysite.io -->
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" >
 <!--link rel="shortcut icon" type="image/x-icon" href=favicon.png sizes=32x32 />
 <link rel=icon type="image/x-icon" href=favicon.png sizes=32x32 />
@@ -34,24 +34,20 @@ html, body{height:100%;width:100%;margin:0;padding:0;overflow:hidden;-webkit-bac
 }
 
 .button.is-selected {
-    background: #57005d;
+    background: #57005d; /* Tyrian (Royal Purple) */
     opacity: 1;
 }
 
-svg:not(:root) {vertical-align: middle;}
-
-.bg-heal {
-	background-color: #f7f5f7;
+article {
+	text-align: center;
 }
 
-
-.bg-healing {
-	background-color: #57005d;
+article p {
+	text-align: left;
 }
 
-
-.bg-deep-healing {
-	background-color: #7f3c84;
+article h3, article h4, article h5, article h6 {
+	text-align: left;
 }
 
 </style>
@@ -60,11 +56,12 @@ svg:not(:root) {vertical-align: middle;}
 </head>
 
 {{/* partial "header.html" . */}}
-<body class="pa0 ma0 no-clutter bg-heal system">
+<body class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter bg-magnolia system">
 	{{ partial "svg.html" . }}
-	<div class="pa0 bn ma0 h3 w-100 top-0 z-9999 antialias bg-deep-healing disable-scrolling absolute fixed">
+	<header class="pa0 bn ma0 h3 w-100 top-0 z-9999 antialias bg-plum disable-scrolling absolute fixed">
 		<p class="white tc">{{ .Site.Title }}</p>
-	</div>
+		<p class="white tc">{{.Description | default .Site.Params.SiteDescription}}</p>		
+	</header>
 	
 	<!-- The big featured header on the homepage, with the site logo and description -->
 	<!--<header id="site-head" {{ if .Site.Params.cover }}style="background-image: url({{ .Site.Params.cover }})"{{ end }}>
@@ -85,7 +82,7 @@ svg:not(:root) {vertical-align: middle;}
 	
 	</header>-->
 	
-	<div id=carousel class="carousel fixed h-100 w-100 top-0 left-0 bg-heal">
+	<div id=carousel class="carousel fixed h-100 w-100 top-0 left-0 tyrian">
 		{{ $current := .Params.Name }}
 		{{ range .Pages.ByWeight }}
 		
@@ -107,7 +104,7 @@ svg:not(:root) {vertical-align: middle;}
 		  			<!--h1 class="post-title">{{ .Title }}</h1-->
 		  			
 		  			
-		  			<section class="measure mr-auto ml-auto baskerville f3 lh-copy ">
+		  			<section class="measure mr-auto ml-auto baskerville f3 lh-copy pt3">
 		  				{{ .Content }}
 		  				<span class="h7 disable-scrolling"></span>
 		  			</section>
@@ -130,20 +127,14 @@ svg:not(:root) {vertical-align: middle;}
 		{{ end }}
 	</div>
 	
-	<style>
-	.ma-auto { margin: auto; }
-	</style>
-	
-
-	
 	<!-- https://gohugo.io/templates/pagination/ -->	
-	<nav class="button-row pa0 bn ma0 h3 h3-ns h3-m h2-l w-100 bottom-0 z-999 no-clutter antialias bg-deep-healing disable-scrolling absolute fixed">
+	<nav class="button-row pa0 bn ma0 h3 h3-ns h3-m h3-l w-100 bottom-0 z-999 no-clutter antialias bg-plum disable-scrolling absolute fixed">
 	  <div class="button-group button-group--cells ">
 	    {{ range .Pages.ByWeight }}
 	    {{ $current := .Params.Name | lower | urlize }}
-	    <button class="fl dib w-third h3 h3-ns h3-m h2-l tc bn pointer glow overflow-x-hidden o-60 button bg-deep-healing ma-auto" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
-	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 pa2 pa2-ns pa2-m pa1-l h3 h3-ns h3-m h2-l ma-auto">
-		    	<svg class="db dib-l ma-auto" width="32" height="32" viewBox="0 0 128 128" alt="{{ .Params.Name | lower | urlize }}"><!-- ml-auto mr-auto dib mt0 db-m mb2-m mt3-m dib-l mb0-l mt0-l -->
+	    <button class="fl dib w-third h3 h3-ns h3-m h3-l tc bn pointer glow overflow-x-hidden o-60 button bg-plum ma-auto" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
+	    	<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu white db w-100 pa2 pa2-ns pa2-m pa3-l h3 h3-ns h3-m h3-l ma-auto">
+		    	<svg class="db dib-l ma-auto v-mid" width="32" height="32" viewBox="0 0 128 128" alt="{{ .Params.Name | lower | urlize }}"><!-- ml-auto mr-auto dib mt0 db-m mb2-m mt3-m dib-l mb0-l mt0-l -->
 		    	  <use xlink:href="#{{ .Params.Name | lower | urlize }}"></use>
 		    	</svg>
 		    	<span>{{ .Params.Name }}</span><!-- class="debug relative underline link top-4" -->
@@ -153,357 +144,7 @@ svg:not(:root) {vertical-align: middle;}
 	  </div>
 	</nav>
 
-	<script>document.ontouchmove=function(event){var isTouchMoveAllowed=true,target=event.target;while(target!==null){if(target.classList&&target.classList.contains('disable-scrolling')){isTouchMoveAllowed=false;break;}
-	target=target.parentNode;}
-	if(!isTouchMoveAllowed){event.preventDefault();}};function removeIOSRubberEffect(element){element.addEventListener("touchstart",function(){var top=element.scrollTop,totalScroll=element.scrollHeight,currentScroll=top+element.offsetHeight;if(top===0){element.scrollTop=1;}else if(currentScroll===totalScroll){element.scrollTop=top-1;}});}
-	removeIOSRubberEffect(document.querySelector(".scrollable"));</script>
-	
-	<script src="js/flickity.pkgd.min.js"></script>
-	<script src="js/hash.min.js"></script>
-	<!-- Lazyload docs: https://flickity.metafizzy.co/options.html -->
-	
-	<!--script>
-		let twoD = [[1, 2, 3, 4, 5, 6, 7],
-		           [8, 10, 5, 7, 3, 22, 6, 42],
-		           [123, 54, 12, 11, 9, 15]];
-	
-		let bigHero = {characters:[
-	        {name:'Hiro', voice:'Ryan Potter'},//Bobba Fett
-	        {name:'Baymax', voice:'Scott Adsit', prop:12},
-	        {name:'Go Go Tamago', voice:'Jamie Chung'},
-	        {name:'Fred', voice:'T.J. Miller'}
-	      ]};
-	</script-->
-	
-	<!--script>	
-		
-//		while(condition) {
-//			statements
-//		}
-//		
-//		do {
-//			statements
-//		} while (condition)
-		  
-		  
-		  // IIFE
-		  (function(){
-			  
-			  let total = 0;
-			  
-			  while ( total < 30 ) {
-			  	total += Math.floor(Math.random() * 5) + 1;
-			  	alert(total);
-			  }
-		  })();// IIFE = immediately-invoked function expression
-		  
-	</script-->
-	
-	<script>		
-			
-			function initGroup() {
-				var init = document.querySelector('.button-group--cells').getElementsByTagName('button')[0];
-				init.classList.add('is-selected');			
-			};
-			
-			function removeHash() { 
-				history.pushState("", document.title, window.location.pathname + window.location.search);
-			}; // - from: https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-url-with-javascript-without-page-r/5298684#5298684
-			
-			var carousel = document.querySelector('.carousel');
-			var flkty = new Flickity( carousel, {
-			  prevNextButtons: false,
-			  dragThreshold:72,//66
-			  wrapAround: true,
-				isInstant: true,			  
-			  pageDots: false,			  
-			  hash: true,
-  		  on: {
-  		    ready: function() {
-  		    
-  		    	//Begin store
-  		    	let uri = window.location.hash.substr(1);
-  		    	let list = document.getElementsByTagName('button');
-
-
-  		    	if (uri == '' ) {
-  		    		alert('empty');
-  		    		initGroup();
-  		    		return;
-  		    	} 
-
-  		    	// MATCH or not?
-  		    	for (var i=0; i<list.length; i++) {
-  		    		let listItem = list[i].getAttribute('data-weight');  		    		
-  		    		
-  		    		if (uri !== listItem) {	  		    		
-
-	  		    		//populated correctly, but not yet = move on
-	  		    		alert('not:' + listItem);
-	  		    		
-	  		    		//populated wrong = sanitise
-	  		    		//alert(uri);
-	  		    		
-	  		    		
-  		    		} else if (uri == listItem) {
-	  		    		//Store
-  		    			alert('this:' + listItem);
-  		    			let init = document.querySelector('.button-group--cells').getElementsByTagName('button')[i];
-  		    			init.classList.add('is-selected');
-  		    		} else {
-  		    			alert(uri);
-  		    		}
-  		    		
-  		    	}//for
-
-
-
-
-/*
-
-(uri !== listItem && uri.length > 0) {	  		    		
-	alert(uri);
-	removeHash()
-	initGroup();
-	return;
-}
-
-
-while (uri !== listItem && uri.length > 0) {
-	alert(uri);
-	//return;
-}
-
-*/
-
-// Sanitise (... 
-    	
-   		    	
-//  		    	for (var i=0; i<list.length; i++) {
-//  		    		let listItem = list[i].getAttribute('data-weight');
-//  		    		if(uri == listItem) {
-//				    	  // Correct
-//								alert('This:' + listItem);	  
-//								
-//				    	} else if (uri !== listItem && listItem.length > 0 ) {
-//				    		alert('not:' + listItem);
-//				    		// Sanitise
-//				    		removeHash();
-//				    		initGroup();
-//				    		return;
-//		
-//				    	} else {
-//				    		// No fragment:
-//				    		initGroup();
-//				    		return;
-//				    	}//if
-//  		    	}//for
-    	
-
-
-//do {
-//	//alert(listItem);
-//} while ( uri !== listItem )
-//
-//do {
-//	//alert(listItem);
-//} while ( uri == listItem )
-  		    	
-  		    	
-//  		    	while ( uri !== listItem ) {
-//		    			//alert(listItem);
-//  		    	}
-  		    	
-
-//  		    	if(uri == "bookings") {
-//  		    	  // Remove fragment
-//  						var init = document.querySelector('.button-group--cells').getElementsByTagName('button')[1];
-//  						init.classList.add('is-selected');   	  
-//  		    	} else if (uri == "visit") {
-//  		    		var init = document.querySelector('.button-group--cells').getElementsByTagName('button')[2];
-//  		    		init.classList.add('is-selected'); 
-//  		    	} else if (uri == "about") {
-//  		    	  var init = document.querySelector('.button-group--cells').getElementsByTagName('button')[0];
-//  		    	  init.classList.add('is-selected');
-//  		    	} else {
-//  		    		// Sanitise, no fragment:
-//  		    		removeHash();
-//  		    		initGroup();
-//  		    		return;
-//  		    	}//if
-  		    	
-  		    }//ready
-  		  }//on
-  		  
-  		});
-			
-// NEW:			
-//			var utils = window.fizzyUIUtils;
-//			var cellsButtonGroup = document.querySelector('.button-group--cells');
-//			var cellsButtons = utils.makeArray( cellsButtonGroup.children );
-//			
-//			// update buttons on select
-//			flkty.on( 'select', function() {
-//			  var previousSelectedButton = cellsButtonGroup.querySelector('.is-selected');
-//			  var selectedButton = cellsButtonGroup.children[ flkty.selectedIndex ];
-//			  previousSelectedButton.classList.remove('is-selected');
-//			  selectedButton.classList.add('is-selected');
-//			  carousel.focus();
-//			});
-//			
-//			// cell select
-//			cellsButtonGroup.addEventListener( 'click', function( event ) {
-//			  if ( !matchesSelector( event.target, '.button' ) ) {
-//			    return;
-//			  }
-//			  var index = cellsButtons.indexOf( event.target );
-//			  flkty.select( index );
-//			});
-			
-			// PREVIOUS:
-			var buttonGroup = document.querySelector('.button-group--cells');
-			var buttons = buttonGroup.querySelectorAll('.button');
-			buttons = fizzyUIUtils.makeArray(buttons);
-			flkty.on('select', function() {
-			    var previousSelectedButton = buttonGroup.querySelector('.is-selected');
-			    var selectedButton = buttonGroup.children[flkty.selectedIndex];
-			    previousSelectedButton.classList.remove('is-selected');
-			    selectedButton.classList.add('is-selected');
-			});
-			buttonGroup.addEventListener('click', function(event) {
-			    if (!matchesSelector(event.target, '.button')) {
-			        return;
-			    }
-			    var index = buttons.indexOf(event.target);
-			    // isInstant: true,
-			    flkty.select(index, false, true);
-			});
-			
-			
-			
-		</script>
-		
-		<!--script>
-			(function(e){
-				var list = document.getElementsByTagName('button');
-				
-				for(var i=0; i<list.length; i++){
-			    list[i].addEventListener('click', function(e){
-		        //alert(e.target.id);
-		        alert(this.getAttribute('data-weight'));
-			    },false);
-				}
-			})();	
-		</script-->
-				
-		<!--script>
-			button = document.getElementsByTagName('button');
-			for (var i = 0; i < button.length; i++) {
-			    button[i].addEventListener('click',x,false);
-			}
-			function x(ev){
-			  alert(ev.target.attribute);
-			}
-			
-			function x() {
-				var button = document.getElementsByTagName('button');
-				var attribute = ;
-				var i = 0;
-					for(i=0;i < attribute.length; i++)
-					alert(attribute[i]);
-			}
-		
-		
-		</script>
-			
-			<!--script>
-				(function(){
-					var button = document.getElementsByTagName('button');
-					for( var i=0; i<button.length; i++ ) {
-						button[i].onclick=function() {
-							//button.getAttribute('data-weight');
-							//alert(attribute);
-							alert(button);
-						}
-					}
-				})();
-			</script-->
-		<script>
-			(function(){
-				var href=document.getElementsByTagName('a');
-				for( var i=0; i<href.length; i++ ) {
-					href[i].ondragstart=function() {
-						return false;
-					}
-				}
-			})();
-		</script>
-		
-		
-		
-		
-	<!--<script>
-				
-		// external js: flickity.pkgd.js
-		var carousel = document.querySelector('.carousel');
-				var flkty = new Flickity( carousel, {
-				  prevNextButtons: false,
-				  pageDots: false,
-				  wrapAround: true,
-				  hash: true,
-
-				  on: {
-				    ready: function() {
-				    	if(window.location.hash) {
-				    	  // Remove fragment. How to retrieve `initialIndex: 2`?
-				    	  // 
-				    	  console.log(window.location.hash);
-								window.location = '';
-				    	} else {
-				    	  // Fragment doesn't exist
-				    	  var init = document.querySelector('.button-group--cells').getElementsByTagName('button')[0];
-				    	  init.classList.add('is-selected');
-				    	}
-				    }//if
-				  }//ready
-				});
-		
-		
-		var utils = window.fizzyUIUtils;
-		
-		var cellsButtonGroup = document.querySelector('.button-group--cells');
-		var cellsButtons = utils.makeArray( cellsButtonGroup.children );
-		
-
-		// update buttons on select
-		flkty.on( 'select', function() {
-		  var previousSelectedButton = cellsButtonGroup.querySelector('.is-selected');
-		  var selectedButton = cellsButtonGroup.children[ flkty.selectedIndex ];
-		  previousSelectedButton.classList.remove('is-selected');
-		  selectedButton.classList.add('is-selected');
-		  carousel.focus();
-		});
-		
-		// cell select
-		cellsButtonGroup.addEventListener( 'click', function( event ) {
-		  if ( !matchesSelector( event.target, '.button' ) ) {
-		    return;
-		  }
-		  var index = cellsButtons.indexOf( event.target );
-		  flkty.select( index );
-		});
-		
-	</script>-->
-	
-	<!--
-	onload
-	choose first button in the array
-	apply .is-selected
-	"select" "javascript" "button" "first" "array"
-	-->
-
-	
 	{{/* partial "footer.html" . */}}
-	{{/* partial "script.html" . */}}
+	{{ partial "script.html" . }}
 </body>
 </html>
