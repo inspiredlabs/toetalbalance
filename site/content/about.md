@@ -10,7 +10,7 @@ Book four reflexology sessions at **£100** – this is a web only offer.
 
 <aside class=tc>
   <a class="link no-underline white system ttu tracked fw4 h2 bn br-pill pa3 pr4 pl4 bg-tyrian hover-bg-plum transition" href="https://monzo.me/catherinedenisephillips/100" role="button">
-  <svg class="pr2 v-btm" width="42" height="42" viewBox="-191 200 128 128" alt="credit-card">
+  <svg class="pr2 v-mid" width="42" height="42" viewBox="-191 200 128 128" alt="credit-card">
     <use xlink:href="#credit-card"></use>
   </svg>Buy now</a>
 </aside>
