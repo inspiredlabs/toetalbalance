@@ -8,7 +8,7 @@ title: Visit
 
 ### Home visits
 
-Please chose a home visit or a Cheshire venue to make arrangements that suit you.
+Please chose a home visit or a Cheshire venue to make arrangements that suit&nbsp;you.
 
 <aside class=tc>
 <a class="link no-underline white system ttu tracked fw4 h2 bn br-pill pa3 pr4 pl4 bg-tyrian hover-bg-plum transition" href="tel:+447855394747" role="button">
@@ -19,7 +19,7 @@ Please chose a home visit or a Cheshire venue to make arrangements that suit you
 
 #### Congelton
 
-17 Tudor Way, Congleton, Cheshire, CW12 4AS
+17 Tudor Way, Congleton, Cheshire, CW12&nbsp;4AS
 
 <aside class=tc>
   <a class="link no-underline white system ttu tracked fw4 h2 bn br-pill pa3 pr4 pl4 bg-tyrian hover-bg-plum transition" href="https://www.google.com/maps/dir/current+location/17+Tudor+Way,+Congleton+CW12+4AS,+United+Kingdom" role="button">
@@ -30,7 +30,7 @@ Please chose a home visit or a Cheshire venue to make arrangements that suit you
 
 #### Prestbury Beaumont
 
-Barchester Care Home, Collar House Drive, Chelford Road, Prestbury, SK10 4AP
+Barchester Care Home, Collar House Drive, Chelford Road, Prestbury, SK10&nbsp;4AP
 
 
 <aside class=tc>

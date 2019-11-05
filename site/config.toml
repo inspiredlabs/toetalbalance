@@ -2,7 +2,7 @@ baseurl = "./" # local only
 # baseurl = "https://toetalbalance.netlify.com/" #{{ .Site.BaseURL }} "/" && netlify
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
 languageCode = "en-gb" #Initial configuration reset #languageCode = "en-us"
-title = "Katy Phillips | Reflexology & Nail Care"
+title = "Katy Phillips, MAR"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
@@ -13,7 +13,9 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   github = "inspiredlabs"
   twitter = "inspiredlabs"
   email = "katyfeet@gmail.com"
-  SiteDescription = "Professional Reflexologist working in Cheshire. Helping the body heal naturally. Site by InspiredLabs.co.uk"
+  SiteDescription = "Reflexology & Nail Care | Registered  AOR member"
+  # Reflexology & Nail Care
+  #SiteDescription = "Professional Reflexologist working in Cheshire. Helping the body heal naturally. Site by InspiredLabs.co.uk"
   #linkedin = "theurbanaut"
   #cover = "/img/background-cover.jpg"
   #logo = "/img/logo-1.jpg"

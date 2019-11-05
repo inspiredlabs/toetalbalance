@@ -5,7 +5,7 @@ title: Booking
 ---
 
 ### Discount
-Book four reflexology sessions at **£100** – this is a web only offer.
+Book four reflexology sessions at **£100** – this is a web only&nbsp;offer.
 
 <aside class=tc>
   <a class="link no-underline white system ttu tracked fw4 h2 bn br-pill pa3 pr4 pl4 bg-tyrian hover-bg-plum transition" href="https://monzo.me/catherinedenisephillips/100" role="button">
@@ -19,13 +19,13 @@ Book four reflexology sessions at **£100** – this is a web only offer.
 <table class="fl tl w-50-ns">
 	<tbody>
 	<tr>
-	<td><strong>£120</strong> – four reflexology sessions</td>
+	<td><strong>£120</strong> – four reflexology&nbsp;sessions</td>
 	</tr>
 	<tr>
-	<td><strong>£20</strong> – foot soak</td>
+	<td><strong>£20</strong> – foot&nbsp;soak</td>
 	</tr>
 	<tr>
-	<td><strong>£20</strong> – home visit</td>
+	<td><strong>£20</strong> – home&nbsp;visit</td>
 	</tr>
 	</tbody>
 </table>
@@ -33,13 +33,13 @@ Book four reflexology sessions at **£100** – this is a web only offer.
 <table class="fl tl w-50-ns">
 	<tbody>
 	<tr>
-	<td><strong>£30</strong> – one reflexology session</td>
+	<td><strong>£30</strong> – one reflexology&nbsp;session</td>
 	</tr>
 	<tr>
-	<td><strong>£15</strong> – Manicure (fingernails painted)</td>
+	<td><strong>£15</strong> – Manicure (fingernails&nbsp;painted)</td>
 	</tr>
 	<tr>
-	<td><strong>£15</strong> – Pedicure (toenails painted)</td>
+	<td><strong>£15</strong> – Pedicure (toenails&nbsp;painted)</td>
 	</tr>
 	</tbody>
 </table>
@@ -48,8 +48,8 @@ Book four reflexology sessions at **£100** – this is a web only offer.
 
 ### Appointments<sup><small>*</small></sup>
 
-Booking four sessions is recommended to get the most benefit from treatment.
+Booking four sessions is recommended to get the most benefit from&nbsp;treatment.
 
 
 <small>*</small>Please clarify each appointment beforehand – there can be no refunds.
-Reflexology is not a massage service.
+Reflexology is not a massage&nbsp;service.

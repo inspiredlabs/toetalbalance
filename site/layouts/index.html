@@ -6,10 +6,12 @@
 <meta charset="UTF-8">
 <!-- https://testmysite.io -->
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" >
-<!--link rel="shortcut icon" type="image/x-icon" href=favicon.png sizes=32x32 />
-<link rel=icon type="image/x-icon" href=favicon.png sizes=32x32 />
-<link rel=apple-touch-icon-precomposed href=favicon.png />
-<link rel=apple-touch-icon href=favicon.png-->
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<meta name="msapplication-TileColor" content="#57005d">
+<meta name="msapplication-TileImage" content="favicon.png">
 
 <!-- Enable responsiveness on mobile devices-->
  {{/* .Title */}} <!--&middot;--> 
@@ -36,10 +38,6 @@ html, body{height:100%;width:100%;margin:0;padding:0;overflow:hidden;-webkit-bac
   opacity: 1;
 }
 
-article {
-	text-align: center;
-}
-
 article p {
 	text-align: left;
 }
@@ -54,13 +52,14 @@ article h3, article h4, article h5, article h6 {
 </head>
 
 
-<body class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter bg-magnolia system">
+<body class="w-100 h-100 ma0 pa0 overflow-hidden backface-hidden no-clutter bg-magnolia baskerville">
 	{{ partial "svg.html" . }}
 	
 	{{/* partial "header.html" . */}}
-	<header class="pa0 bn ma0 h3 w-100 top-0 z-9999 antialias bg-plum disable-scrolling absolute fixed">
-		<p class="white tc">{{ .Site.Title }}</p>
-		<!--p class="white tc">{{/* .Description | default .Site.Params.SiteDescription */}}</p-->
+	<header class="pa0 ma0 h2 w-100 z-9999 antialias disable-scrolling absolute fixed lh-title white b bg-plum">
+		<h1 class="f5 ma0 fl tc w-100 w-50-l bg-plum pt2 pb2">{{ .Site.Title }}</h1>
+		<h2 class="f5 ma0 fl tc w-100 w-50-l bg-plum pt2 pb2">{{ .Description | default .Site.Params.SiteDescription }}</h2>		
+		<!--p class="white tc"></p-->
 	</header>
 	
 	<!-- The big featured header on the homepage, with the site logo and description -->
@@ -90,7 +89,7 @@ article h3, article h4, article h5, article h6 {
 		  
 		  <div class="carousel-cell scrollable {{/* if eq .Params.Name $current.Params.Name }} is-selected {{ end */}}" id="{{ .Params.name | lower | urlize }}">
 		  	<div class="h-100 overflow-y-scroll touch-scrolling">
-		  		<article class="w-100 mt5 mb7 highlight pr3 pl3">
+		  		<article class="w-100 mt5 mb7 highlight pr3 pl3 tc">
 		  		
 		  			{{/*<!--header class="post-header">
 		  			<a id="blog-logo" href="{{ .Site.BaseURL}}">
@@ -104,7 +103,7 @@ article h3, article h4, article h5, article h6 {
 		  			<!--h1 class="post-title">{{ .Title }}</h1-->
 		  			
 		  			
-		  			<section class="measure mr-auto ml-auto baskerville f3 lh-copy pt3">
+		  			<section class="measure mr-auto ml-auto f3 lh-copy pt3">
 		  				{{ .Content }}
 		  				<span class="h7 disable-scrolling"></span>
 		  			</section>
@@ -128,7 +127,7 @@ article h3, article h4, article h5, article h6 {
 	</div>
 	
 	<!-- https://gohugo.io/templates/pagination/ -->	
-	<nav class="button-row pa0 bn ma0 h3 h3-ns h3-m h3-l w-100 bottom-0 z-999 no-clutter antialias bg-plum disable-scrolling absolute fixed">
+	<nav class="system button-row pa0 bn ma0 h3 h3-ns h3-m h3-l w-100 bottom-0 z-999 no-clutter antialias bg-plum disable-scrolling absolute fixed">
 	  <div class="button-group button-group--cells ">
 	    {{ range .Pages.ByWeight }}
 	    {{ $current := .Params.Name | lower | urlize }}
