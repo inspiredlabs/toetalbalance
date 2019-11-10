@@ -1,0 +1,42 @@
+<header class="pa0 ma0 h2 w-100 z-9999 disable-scrolling absolute fixed lh-title antialias bg-plum white">
+	<!-- <b class="w-10 fixed z-999 mt0 pa1 top-0 green o-40" id="debugInfo">0</b> -->
+	<h1 class="f6 f7-ns f5-m f5-l ma0 fl tc w-100 w-50-ns w-50-m w-50-l bg-plum pt2 pb2 fw7">{{ .Site.Title }}</h1>
+	<h2 class="f6 f7-ns f5-m f5-l ma0 fl tc w-100 w-50-ns w-50-m w-50-l bg-plum pt2 pb2 fw6">{{ .Description | default .Site.Params.SiteDescription }}</h2>
+</header>
+
+<!-- The big featured header on the homepage, with the site logo and description -->
+<!--<header id="site-head" {{ if .Site.Params.cover }}style="background-image: url({{ .Site.Params.cover }})"{{ end }}>
+		<div class="vertical">
+				<div id="site-head-content" class="inner">
+
+						{{ if .Site.Params.logo }} <a id="blog-logo" href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.logo }}" alt="Blog Logo" /></a>{{ end }}
+						<h1 class="blog-title">{{ .Site.Title}}</h1>
+						{{ if .Site.Params.description }}<h2 class="blog-description">{{ .Site.Params.description }}</h2> {{ else  }}
+						<h2 class="blog-description">Power puff girls</h2>
+						{{ end }}
+
+						<a class='btn first'>Take a tour</a>
+						<a class='btn last'>Cut to the chase</a><br>
+						<i id='header-arrow' class="fa fa-angle-down"></i>
+				</div>
+		</div>
+</header>-->
+<!-- https://gohugo.io/templates/pagination/ -->
+<nav class="transparent system pa0 bn ma0 h3 h3-ns h3-m h3-l w-100 bottom-0 z-999 no-clutter disable-scrolling absolute fixed
+button-row bg-plum">
+	<div class="button-group button-group--cells">
+		{{ range .Pages.ByWeight }}
+		{{ $current := .Params.Name | lower | urlize }}
+		<button class="fl dib h3 h3-ns h3-m h3-l tc bn pointer glow pr0 pl0 overflow-x-hidden ma-auto
+		button w-third o-60 bg-plum" data-weight="{{ $current }}"><!--alert(getAttribute('data-weight')); data-weight={{/**/}} -->
+			<a href="#{{ .Params.Name | lower | urlize }}" class="link ttu db w-100 pa2 pa2-ns pa2-m pa3-l pr0 pl0 overflow-x-hidden h3 h3-ns h3-m h3-l ma-auto no-focus-ring
+			button-reset antialias white">
+				<svg class="db dib-l ma-auto v-mid" width="32" height="32" viewBox="0 0 128 128" alt="{{ .Params.Icon | lower | urlize }}"><!-- ml-auto mr-auto dib mt0 db-m mb2-m mt3-m dib-l mb0-l mt0-l -->
+					<use xlink:href="#{{ .Params.Icon | lower | urlize }}"></use>
+				</svg>
+				<span>{{ .Params.Name }}</span>
+			</a>
+		</button>
+		{{ end }}
+	</div>
+</nav>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- https://testmysite.io -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" >
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<meta name="msapplication-TileColor" content="#57005d">
+<meta name="msapplication-TileImage" content="favicon.png">
+
+<!-- Enable responsiveness on mobile devices-->
+{{/* .Title */}} <!--&middot;--> 
+<title>{{ .Site.Title }}</title>
+<meta name=apple-mobile-web-app-title content="{{ .Site.Title }}">
+<meta name="description" content="{{ .Description | default .Site.Params.SiteDescription }}">
+
+<!-- Tachyon Shower -->
+<link rel="stylesheet" href="https://instantwebapp.netlify.com/css/tachyon.shower.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}js/flickity.min.css">
+
+<style>
+/* external css: flickity.css */
+html{-ms-touch-action:manipulation;touch-action:manipulation;}
+html, body{height:100%;width:100%;margin:0;padding:0;overflow:hidden;-webkit-backface-visibility:hidden;}
+.carousel-cell{/*width: 100%;*/width:100vw;/*height: 100%;*/height:calc(100% - 1px);/*overflow-y:scroll;-webkit-overflow-scrolling:touch;padding-top:4.4rem;*/}
+
+.flickity-page-dots {
+	bottom: 0;
+	z-index: 999;
+}
+
+.button.is-selected {
+  background: var(--tyrian); /* consider universal configurator */
+  opacity: 1;
+}
+
+article p {
+	text-align: left;
+}
+
+article h4, article h5, article h6 {
+	text-align: left;
+}
+
+</style>
+</head>

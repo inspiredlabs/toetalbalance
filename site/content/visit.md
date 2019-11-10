@@ -2,7 +2,7 @@
 weight: 3
 name: visit
 title: Visit
-
+icon: visit
 
 ---
 

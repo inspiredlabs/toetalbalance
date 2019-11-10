@@ -2,6 +2,7 @@
 weight: 2
 name: booking
 title: Booking
+icon: card
 ---
 
 ### Discount
@@ -16,6 +17,7 @@ Book four reflexology sessions at **£100** – this is a web only&nbsp;offer.
 
 ### Pricelist
 
+<div class=cf>
 <table class="fl tl w-50-ns">
 	<tbody>
 	<tr>
@@ -43,7 +45,7 @@ Book four reflexology sessions at **£100** – this is a web only&nbsp;offer.
 	</tr>
 	</tbody>
 </table>
-
+</div>
 
 
 ### Appointments<sup><small>*</small></sup>
