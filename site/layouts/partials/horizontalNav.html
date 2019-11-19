@@ -1,7 +1,7 @@
 <header class="pa0 ma0 h2 w-100 z-9999 disable-scrolling absolute fixed lh-title antialias bg-plum white">
 	<!-- <b class="w-10 fixed z-999 mt0 pa1 top-0 green o-40" id="debugInfo">0</b> -->
 	<h1 class="f6 f7-ns f5-m f5-l ma0 fl tc w-100 w-50-ns w-50-m w-50-l bg-plum pt2 pb2 fw7">{{ .Site.Title }}</h1>
-	<h2 class="f6 f7-ns f5-m f5-l ma0 fl tc w-100 w-50-ns w-50-m w-50-l bg-plum pt2 pb2 fw6">{{ .Description | default .Site.Params.SiteDescription }}</h2>
+	<h2 class="f6 f7-ns f5-m f5-l ma0 fl tc w-100 w-50-ns w-50-m w-50-l bg-plum pt2 pb2 fw6">{{ .Site.Params.SiteDescription }}{{/* .Description | default .Site.Params.SiteDescription */}}</h2>
 </header>
 
 <!-- The big featured header on the homepage, with the site logo and description -->

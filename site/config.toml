@@ -3,19 +3,27 @@ baseurl = "./" # local only
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
 languageCode = "en-gb" #Initial configuration reset #languageCode = "en-us"
 title = "Katy Phillips, MAR"
+images = "https://toetalbalance.co.uk/favicon.png" #base64
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
-[Params]
-  github = "inspiredlabs"
-  twitter = "inspiredlabs"
+[author]
+  name = "Katy Phillips, MAR"
   email = "katyfeet@gmail.com"
+  twitter = "inspiredlabs"
+  image = "https://toetalbalance.co.uk/favicon.png"
+  homepage = "https://toetalbalance.co.uk/"
+	bio = """Qualified in 2008 and practicing professional reflexology across Cheshire for over 10 years. Member of the Association of Reflexologists. Katy Phillips is a professional reflexology practitioner who applies pressure to the feet and hands to encourage the body to heal naturally.""" #"""multi-line""" #https://discourse.gohugo.io/t/how-to-access-site-params-map-with-a-params-variable/348/2
+
+[Params]
+  email = "katyfeet@gmail.com"
+  keywords = ["Reflexology", "Nail Care", "Katy Phillips", "Professional Reflexologist", "Cheshire", "Congleton", "Knutsford", "Macclesfield", "Wilmslow", "Alderly Edge", "helping the body heal naturally", "natural remedy", "home remedy", "complementary medicine" ]
+  description = """Reflexology & Nail Care. Professional Reflexologist working in Cheshire. Helping the body heal naturally. Site by InspiredLabs.co.uk""" #<160 thing for SERP
   SiteDescription = "Reflexology & Nail Care | Registered  AOR member"
-  # Reflexology & Nail Care
-  #SiteDescription = "Professional Reflexologist working in Cheshire. Helping the body heal naturally. Site by InspiredLabs.co.uk"
+  copyright = "Scott Phillips" # © = http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php
   #linkedin = "theurbanaut"
   #cover = "/img/background-cover.jpg"
   #logo = "/img/logo-1.jpg"

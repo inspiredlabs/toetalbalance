@@ -2,16 +2,64 @@
 <html>
 <head>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<!-- https://testmysite.io -->
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" >
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-<link rel="shortcut icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{{ .Permalink }}" />
 
-<meta name="msapplication-TileColor" content="#57005d">
-<meta name="msapplication-TileImage" content="favicon.png">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <title>{{ .Site.Title }}</title>
+    <meta name=apple-mobile-web-app-title content="{{ .Site.Title }}">
+    <!-- SERP <160 length -->
+    <!-- <meta name="description" content="{{/* .Description | default .Site.Params.SiteDescription */}}"> -->
+    {{ if (isset .Params "description") }}
+    <meta name="description"
+      content="{{ if (isset .Site.Params "description") }}{{ .Site.Params.Description }}{{ end }} | {{ .Params.description }}" />
+    {{ end }}
+    <meta name="homepage" content="{{ .Site.Author.homepage }}" />
+    <meta name="biography" content="{{ .Site.Author.bio }}" />
+    <meta name="keywords"
+      content="{{ with .Keywords }}{{ delimit . ", " }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />
+    <meta name="news_keywords"
+      content="{{ with .Params.news_keywords }}{{ delimit . ", " }}{{ else }}{{ .Keywords }}{{ end }}" />
+    <meta name="copyright" content="©{{ now.Format "2006"}}, {{ .Site.Params.copyright }}" /><!-- | markdownify -->
+
+    <!-- Twitter: summary|photo|video, a *canonical* link -->
+    <meta name="twitter:url" content="{{ .Permalink }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@{{ .Site.Author.twitter }}" />
+    <meta name="twitter:title" content="{{ .Site.Title }} | {{ .Site.Params.SiteDescription }}" />{{/* .Description */}}
+    <meta name="twitter:creator" content="@{{ .Site.Author.twitter }}" />
+    <meta name="twitter:description" content="{{ .Site.Params.Description }}" />{{/* .Description */}}
+    <meta name="twitter:image" content="{{ .Site.Author.image }}" />{{/* .Site.Author.image | absURL */}}
+    <meta name="twitter:image:src" content="{{ .Site.Author.image }}" />{{/* .Site.Author.image | absURL */}}
+
+    <!-- Open Graph, Facebook needs: context, no branding! Optional `Locale`. -->
+    <!--meta property="og:site_name" content="InstantWebapp" /-->
+    <!-- Mandetory: `Type` website | article | blog = LIKE! (more: neilpatel.com/blog/open-graph-meta-tags/). -->
+    <meta property="og:author" content="{{ .Site.Author.name }}" />
+    <meta property="og:type" content="{{ if (isset .Params "like") }}{{ .Params.like }}{{else}}article{{ end }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:title" content="{{ .Site.Title }} | {{ .Site.Params.SiteDescription }}" />
+    {{ if (isset .Params "description") }}
+    <meta property="og:description" content="{{ .Site.Params.Description }}" />{{/* .Params.description }}
+    {{ if (isset .Site.Params "description") }}{{ .Site.Params.Description }}{{ end */}}{{ end }}
+    <meta property="og:url" content="{{ .Permalink }}" />{{ if (isset .Params "LanguageCode") }}
+    <meta property="og:locale" content="{{ .Params.LanguageCode }}" />{{ else}}
+    <meta property="og:locale"
+      content="{{ if .Params.LanguageCode }}{{ .Params.LanguageCode }}{{ else }}{{ $.Site.LanguageCode | default "en-gb" }}{{ end }}" />
+    {{ end }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}favicon.png" />
+    <meta property="og:image:secure_url" content="{{ .Site.BaseURL }}favicon.png" />
+
+    <!-- https://testmysite.io -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no" >
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <meta name="msapplication-TileColor" content="#57005d">
+    <meta name="msapplication-TileImage" content="favicon.png">
 
 <!-- Enable responsiveness on mobile devices-->
 {{/* .Title */}} <!--&middot;--> 
