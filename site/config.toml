@@ -1,5 +1,5 @@
-baseurl = "./" # local only
-# baseurl = "https://toetalbalance.netlify.com/" #{{ .Site.BaseURL }} "/" && netlify
+# baseurl = "./" # local only
+baseurl = "https://toetalbalance.co.uk/" #https://toetalbalance.netlify.com/ && "/" && {{ .Site.BaseURL }}
 # relativeURLs = "true" #https://github.com/gohugoio/hugo/issues/985
 languageCode = "en-gb" #Initial configuration reset #languageCode = "en-us"
 title = "Katy Phillips, MAR"
