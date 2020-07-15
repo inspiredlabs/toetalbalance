@@ -17,7 +17,7 @@
   <meta name="description" content="{{ .Description | default .Site.Params.SiteDescription }}">
   <!-- SERP <160 length -->
   <!-- <meta name="description" content="{{/* .Description | default .Site.Params.SiteDescription */}}"> -->
-  
+
   {{ if (isset .Params "description") }}
   <meta name="description"
     content="{{ if (isset .Site.Params "description") }}{{ .Site.Params.Description }}{{ end }} | {{ .Params.description }}" />
@@ -70,7 +70,7 @@
 
 
   <!-- Tachyon Shower -->
-  <link rel="stylesheet" href="https://instantwebapp.netlify.com/css/tachyon.shower.css" />
+  <link rel="stylesheet" href="https://instantwebapp.it/css/tachyon.shower.css" />
   <link rel="stylesheet" href="{{ .Site.BaseURL }}js/flickity.min.css">
 
 <style>
